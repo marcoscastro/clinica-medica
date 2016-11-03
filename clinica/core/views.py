@@ -3,4 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-	return HttpResponse('Hello Django')
+	lista_clientes = ['marcos', 'lucas', 'felipe']
+	context = {
+		'title': 'bem-vindo(a) a clínica!',
+		'clientes': lista_clientes
+	}
+	return render(request, 'index.html', context)
