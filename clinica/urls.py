@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from core.views import index
+from core.views import index, contact, user, user_list
 
 urlpatterns = [
-	url(r'^$', index),
+	url(r'^$', index, name='index'),
+    url(r'^contato/$', contact, name='contact'),
+    url(r'^usuario/$', user, name='user'),
+    url(r'^usuarios/$', user_list, name='user_list'),
     url(r'^admin/', admin.site.urls),
 ]
